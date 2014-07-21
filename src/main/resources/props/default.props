@@ -1,0 +1,8 @@
+##any db drop and create data true/false
+db.schemify=true
+
+##mysql db setup
+mysql.db.driver=com.mysql.jdbc.Driver
+mysql.db.url=jdbc:mysql://localhost:3306/lift26
+mysql.db.user=root
+mysql.db.pass=root
