@@ -90,7 +90,7 @@ class Boot {
     val static     = Menu(Loc("Static", Link(List("static"), true,
                         "/static/index"), S.loc("StaticContent" ,
                       scala.xml.Text("Static Content")),
-                      LocGroup("lg2","topRight"),User.loggedIn_?))
+                      LocGroup("lg2","topRight")))
    val twbs  = Menu(Loc("twbs",
         ExtLink("http://getbootstrap.com/"), 
         S.loc("Bootstrap3", Text("Bootstrap3")), 
