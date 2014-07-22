@@ -8,6 +8,7 @@ class Album extends LongKeyedMapper[Album]
   def primaryKeyField = id
 
   object id extends MappedLongIndex(this)
+  object user extends MappedLongForeignKey(this, User)
   object albumname extends MappedString(this,100)
 
 }

@@ -9,11 +9,10 @@ import http._
 import sitemap._
 import Loc._
 import mapper._
-
 import code.model._
 import net.liftmodules.FoBo
-
 import scala.language.postfixOps
+
 
 /**
  * A class that's instantiated early and run.  It allows the application
@@ -68,7 +67,7 @@ class Boot {
     // Use HTML5 for rendering
     LiftRules.htmlProperties.default.set((r: Req) =>
       new Html5Properties(r.userAgent))    
-      
+
     LiftRules.noticesAutoFadeOut.default.set( (notices: NoticeType.Value) => {
         notices match {
           case NoticeType.Notice => Full((8 seconds, 4 seconds))
@@ -87,8 +86,12 @@ class Boot {
     val ddLabel1   = Menu.i("UserDDLabel") / "ddlabel1"
     val home       = Menu.i("Home") / "index" 
     val userMenu   = User.AddUserMenusHere
-    val static     = Menu(Loc("Static", Link(List("static"), true, "/static/index"), S.loc("StaticContent" , scala.xml.Text("Static Content")),LocGroup("lg2","topRight")))
-   val twbs  = Menu(Loc("twbs", 
+//    val static     = Menu.i("Static") / "static/index" >> Hidden
+    val static     = Menu(Loc("Static", Link(List("static"), true,
+                        "/static/index"), S.loc("StaticContent" ,
+                      scala.xml.Text("Static Content")),
+                      LocGroup("lg2","topRight"),User.loggedIn_?))
+   val twbs  = Menu(Loc("twbs",
         ExtLink("http://getbootstrap.com/"), 
         S.loc("Bootstrap3", Text("Bootstrap3")), 
         LocGroup("lg2"),
