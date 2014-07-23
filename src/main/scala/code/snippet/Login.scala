@@ -1,22 +1,22 @@
 package code.snippet
 
-import net.liftweb.http._
+
 import code.model._
-import scala.xml._
 import net.liftweb.util.Helpers._
+
 
 class Login
 //  extends DispatchSnippet
 {
   val albumsList:List[Album]  = Album.findAll()
 
+  //S.addCookie(HTTPCookie("user", "cookie Value").setDomain(S.hostName).setPath("/"))
   def render = {
     "a"        #> albumsList.map( c =>
       "* [href]" #> "/index" &
         "* *"      #> (c.albumname.get)
     )
   }
-
 //  def dispatch: DispatchIt = {
 //    case "index" => index
 //  }

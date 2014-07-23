@@ -28,7 +28,8 @@ libraryDependencies ++= {
     "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" % "container,test" artifacts Artifact("javax.servlet", "jar", "jar"),
     "ch.qos.logback"    % "logback-classic"     % "1.0.6",
     "org.specs2"        %% "specs2"             % "2.3.12"           % "test",
-    "mysql"             %  "mysql-connector-java"   % "5.1.12"
+    "mysql"             %  "mysql-connector-java"   % "5.1.12",
+    "net.liftmodules"   %% "amqp_2.5" % "1.3"
   )
 }
 
