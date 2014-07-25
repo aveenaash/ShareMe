@@ -174,6 +174,11 @@ a.list-group-item:hover, a.list-group-item:focus {
 
 }
 
+#hero-unit
+{
+    background-color:#fffcdd;
+}
+
 
 /*end bootstrap theme*/
 

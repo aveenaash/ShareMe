@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <title>Create Album</title>
+  </head>
+  <body data-lift-content-id="main">
+    <div id="main" data-lift="surround?with=default;at=content">
+        <div class="col-sm-9" id="hero-unit"
+             style="background-color: #fffcdd;
+                    padding-top: 20px;
+                    padding-left: 20px;
+                    padding-bottom: 20px;
+                    padding-right: 20px;">
+        <form data-lift="AlbumCreator" method="post">
+        <table>
+        <tr>
+        <td><input name="albumname" type="text" placeholder="Choose Albumname"/></td>
+        </tr>
+        <tr>
+            <td><textarea cols="50" rows="6" placeholder="Add Description" name="albumDesc"></textarea></td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+        <td><input type="submit" name="addPhoto" value="Add Photos" class="btn btn-primary btn-small"></td>
+        </tr>
+        <tr>
+        <td><input type="submit" value="Create Album" class="btn btn-primary btn-small"></td>
+        </tr>
+        </table>
+         <span>
+         <div style="background-color: #000000;
+                    padding-top: 20px;
+                    padding-left: 20px;
+                    padding-bottom: 20px;
+                    padding-right: 20px;">
+
+         </div>
+        </span>
+        </form>
+
+    </div>
+  </body>
+</html>
+

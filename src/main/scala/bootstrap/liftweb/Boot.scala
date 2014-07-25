@@ -84,7 +84,8 @@ class Boot {
     import scala.xml._
     val divider1   = Menu("divider1") / "divider1"
     val ddLabel1   = Menu.i("UserDDLabel") / "ddlabel1"
-    val home       = Menu.i("Home") / "index" 
+    val home       = Menu.i("Home") / "index"
+    val createAlbum       = Menu.i("createAlbum") / "createAlbum" >> Hidden
     val userMenu   = User.AddUserMenusHere
 //    val static     = Menu.i("Static") / "static/index" >> Hidden
     val static     = Menu(Loc("Static", Link(List("static"), true,
@@ -101,6 +102,7 @@ class Boot {
     def sitemap = SiteMap(
         home          >> LocGroup("lg1"),
         static,
+      createAlbum,
         twbs,
         ddLabel1      >> LocGroup("topRight") >> PlaceHolder submenus (
             divider1  >> FoBo.TBLocInfo.Divider >> userMenu
