@@ -10,6 +10,11 @@ class Album extends LongKeyedMapper[Album]
   object id extends MappedLongIndex(this)
   object user extends MappedLongForeignKey(this, User)
   object albumname extends MappedString(this,100)
+  object albumDesc extends MappedTextarea(this, 2048) {
+    override def textareaRows  = 6
+    override def textareaCols = 50
+    override def displayName = "Description to the album"
+  }
 
 }
 

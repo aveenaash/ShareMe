@@ -18,7 +18,10 @@ object AlbumCreator{
     var albumDesc = ""
     def process() {
       val album : Album= Album.create
+      album.user(User.currentUserId.get.toLong)
+      println(User.currentUserId.get)
       album.albumname(albumname)
+      album.albumDesc(albumDesc)
       val saved : Boolean = album.save
       if(saved) {
         S.redirectTo("/index")
@@ -35,9 +38,9 @@ object AlbumCreator{
     }
 
     "name=albumname" #> SHtml.text(albumname, albumname = _) &
-      "name=albumDesc" #> SHtml.text(albumDesc, albumDesc = _) &
+      "name=albumDesc" #> SHtml.textarea(albumDesc, albumDesc = _) &
     // when the form is submitted, process the variable
-    "name=addPhoto" #> SHtml.onSubmitUnit(uploadPhoto)
+//    "name=addPhoto" #> SHtml.onSubmitUnit(uploadPhoto)
     "type=submit" #> SHtml.onSubmitUnit(process)
   }
 
